@@ -1,0 +1,14 @@
+{
+  "name": "sanbercode-quiz-3-bootcamp-qa-batch-52",
+  "version": "1.0.0",
+  "description": "This repository contains about quiz week 3 Sanbercode Quality Assurance Bootcamp Batch 52",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^13.6.2"
+  }
+}
