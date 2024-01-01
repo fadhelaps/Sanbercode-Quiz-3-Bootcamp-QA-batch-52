@@ -7,7 +7,7 @@ describe('login test', () => {
         cy.get('.panel > .header > .authorization-link > a').click()
     });
     
-    it('verify success login', () => { //custom command
+    it.only('verify success login', () => { //custom command
         cy.login('userTest@gmail.com', 'Password_123')
         // cy.get('#email').type('userTest@gmail.com')
         // cy.get('#pass').type('Password_123')
