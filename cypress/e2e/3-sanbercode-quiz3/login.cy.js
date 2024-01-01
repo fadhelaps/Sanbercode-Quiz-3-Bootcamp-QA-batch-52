@@ -1,4 +1,5 @@
 import loginPage from "../../support/pageObject/sanbercode-quiz3/login.page";
+const userLogin = require("../../fixtures/quiz3/userLogin.json");
 
 describe('login test', () => {
     beforeEach(() => {
@@ -19,6 +20,12 @@ describe('login test', () => {
         loginPage.clickLoginButton()
     });
 
+    it('verify success login', () => { //fixtures
+        cy.get(loginPage.email).type(userLogin.valid_email)
+        cy.get(loginPage.password).type(userLogin.valid_password)
+        loginPage.clickLoginButton()
+    });
+
     it('verify failed login', () => { //input wrong email -- custom command
         cy.login('userTes@gmail.com', 'Password_123')
         // cy.get('#email').type('userTes@gmail.com')
@@ -34,6 +41,13 @@ describe('login test', () => {
        loginPage.clickLoginButton()
        loginPage.verifyAlertLoginFailed('Please enter a valid email address')
     });
+
+    it('verify failed login', () => { //input wrong email -- fixture
+        cy.get(loginPage.email).type(userLogin.invalid_email)
+        cy.get(loginPage.password).type('Password_123')
+        loginPage.clickLoginButton()
+        loginPage.verifyAlertLoginFailed(userLogin.message[0].invalid_message)
+     });
 
     it('verify failed login', () => { //input wrong password
         cy.login('userTes@gmail.com', 'Password_12')

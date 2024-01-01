@@ -1,0 +1,12 @@
+{
+    "valid_email": "userTest@gmail.com",
+    "valid_password": "Password_123",
+    "invalid_email": "asdasd",
+    "invalid_password": "qwer",
+    "message": [
+        {
+            "invalid_message": "Please enter a valid email address",
+            "valid_message": "nice!"
+        }
+    ]
+}
