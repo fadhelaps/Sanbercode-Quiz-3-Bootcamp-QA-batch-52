@@ -1,3 +1,4 @@
+
 import chooseProducts from '../support/pageObject/sanbercode-quiz3/products';
 const inputProducts = require('../fixtures/quiz3/chooseProduct.json')
 describe('choose product', () => {
@@ -89,11 +90,12 @@ describe('choose product', () => {
     });
 
     it(' Kosong QTY Fixture', () => {
+        
         cy.login('userTest@gmail.com', 'Password_123')
         cy.get('#send2').click()
         cy.chooseProducts(inputProducts.kosong_qty)
         cy.get('#product-addtocart-button > span').click()
         cy.get('#qty-error').should('contain.text', inputProducts.message[0].kosong_message)
     });
-
+   
 })
