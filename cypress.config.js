@@ -7,6 +7,8 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
-    viewportHeight: 680
+    viewportHeight: 680,
+    watchForFileChanges: false,
+    defaultCommandTimeout: 60000
   },
 });

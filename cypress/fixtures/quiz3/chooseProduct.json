@@ -1,0 +1,12 @@
+{
+    "valid_qty": "3",
+    "invalid_qty": "-1",
+    "kosong_qty": " ",
+    "message": [
+        {
+            "invalid_message": "Please enter a quantity greater than 0.",
+            "kosong_message": "Please enter a valid number in this field."
+
+        }
+    ]
+}
