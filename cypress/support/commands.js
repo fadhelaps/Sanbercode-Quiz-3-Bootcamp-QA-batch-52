@@ -29,9 +29,12 @@ Cypress.Commands.add('chooseProducts',(Qty) => {
     cy.get('#ui-id-3 > span').click()
     cy.get(':nth-child(2) > .product-item-info > .product-item-details > .product-item-name > .product-item-link').click()
     cy.get('#option-label-size-143-item-166').click()
-    cy.get('#option-label-color-93-item-56').click()
+    cy.get('#option-label-color-93-item-49').click()
     cy.get('#qty').clear().type(Qty)
+    cy.get('#product-addtocart-button > span').click()
 })
+
+
 
 
 //
