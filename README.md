@@ -4,5 +4,5 @@ This repository contains about quiz week 3 Sanbercode Quality Assurance Bootcamp
 
 pembagian tugas:
 Fadhel : regist dan login
-
+Prasetio My Account > Edit Account Information n Address
 Dani Rachmad : Choose Products
