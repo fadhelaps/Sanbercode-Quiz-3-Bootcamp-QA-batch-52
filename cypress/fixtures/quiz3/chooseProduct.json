@@ -5,8 +5,8 @@
     "message": [
         {
             "invalid_message": "Please enter a quantity greater than 0.",
-            "kosong_message": "Please enter a valid number in this field."
-
+            "kosong_message": "Please enter a valid number in this field.",
+            "field_message": "This is a required field"
         }
     ]
 }

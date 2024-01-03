@@ -12,7 +12,6 @@ describe('choose product', () => {
         cy.login('userTest@gmail.com', 'Password_123')
         cy.get('#send2').click()
         cy.chooseProducts('1')
-        
     })
 
     it('0 QTY', () => { 
@@ -33,6 +32,20 @@ describe('choose product', () => {
         cy.get('#send2').click()
         cy.chooseProducts(' ')
         cy.get('#qty-error').should('contain.text', 'Please enter a valid number in this field.')
+    })
+
+    it('No Size Error', () => { 
+        cy.login('userTest@gmail.com', 'Password_123')
+        cy.get('#send2').click()
+        cy.noSize('1')
+        cy.contains('This is a required field')
+    })
+
+    it('No Color Error', () => { 
+        cy.login('userTest@gmail.com', 'Password_123')
+        cy.get('#send2').click()
+        cy.noColor('1')
+        cy.contains('This is a required field')
     })
 
     // POM
@@ -72,6 +85,24 @@ describe('choose product', () => {
         chooseProducts.qtyValidation('Please enter a valid number in this field.')
     });
 
+    it('No Size POM', () => {
+        cy.login('userTest@gmail.com', 'Password_123')
+        cy.get('#send2').click()
+        chooseProducts.noSize()
+        cy.get(chooseProducts.qty).clear().type('2')
+        cy.get('#product-addtocart-button > span').click()
+        chooseProducts.sizeValidation('This is a required field')
+    });
+
+    it('No Color POM', () => {
+        cy.login('userTest@gmail.com', 'Password_123')
+        cy.get('#send2').click()
+        chooseProducts.noColor()
+        cy.get(chooseProducts.qty).clear().type('2')
+        cy.get('#product-addtocart-button > span').click()
+        chooseProducts.colorValidation('This is a required field')
+    });
+
     // fixture
 
     it('Succses Get Product Fixture', () => {
@@ -96,6 +127,22 @@ describe('choose product', () => {
         cy.chooseProducts(inputProducts.kosong_qty)
         cy.get('#product-addtocart-button > span').click()
         cy.get('#qty-error').should('contain.text', inputProducts.message[0].kosong_message)
+    });
+
+    it('No Size Fixture', () => {
+        cy.login('userTest@gmail.com', 'Password_123')
+        cy.get('#send2').click()
+        cy.noSize(inputProducts.valid_qty)
+        cy.get('#product-addtocart-button > span').click()
+        cy.contains(inputProducts.message[0].field_message)
+    });
+
+    it('No Color Fixture', () => {
+        cy.login('userTest@gmail.com', 'Password_123')
+        cy.get('#send2').click()
+        cy.noColor(inputProducts.valid_qty)
+        cy.get('#product-addtocart-button > span').click()
+        cy.contains(inputProducts.message[0].field_message)
     });
    
 })
